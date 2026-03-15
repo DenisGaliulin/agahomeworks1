@@ -27,7 +27,7 @@ class CallbackTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:9999");
     }
@@ -78,7 +78,7 @@ class CallbackTest {
         elements.get(0).sendKeys("Василий");
         elements.get(1).sendKeys("+79270000000");
         driver.findElement(By.className("button")).click();
-        WebElement invalidElement = driver.findElement(By.cssSelector("[data-test-id=agreement].input_invalid")) ;
-        assertEquals(true, invalidElement.isDisplayed() );
+        WebElement invalidElement = driver.findElement(By.cssSelector("[data-test-id=agreement].input_invalid"));
+        assertEquals(true, invalidElement.isDisplayed());
     }
 }
